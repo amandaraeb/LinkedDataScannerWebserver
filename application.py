@@ -23,6 +23,7 @@ from boto import dynamodb2
 from boto.dynamodb2.table import Table
 
 TABLE_NAME = "books"
+USER_TABLE_NAME = "Users"
 REGION = "us-east-1"
 
 conn = dynamodb2.connect_to_region(
@@ -35,7 +36,7 @@ table = Table(
     connection=conn
 )
 
-usertable = Table("Users", connection=conn)
+usertable = Table(USER_TABLE_NAME, connection=conn)
 
 
 
